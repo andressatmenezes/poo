@@ -19,30 +19,30 @@ int main(){
     struct numComplexo n1, n2, resp;
     char op;
 
-    cin >> a >> b >> op >> c >> d;
-    n1= complexo(a, b);
-    n2= complexo(c, d);
-
-    if(op=='+'){
-        resp= soma(n1, n2);
+    while(cin >> a >> b >> op >> c >> d){
+        n1= complexo(a, b);
+        n2= complexo(c, d);
+    
+        if(op=='+'){
+            resp= soma(n1, n2);
+        }
+        if(op=='-'){
+            resp= sub(n1, n2);
+        }
+        if(op=='*'){
+            resp= mult(n1, n2);
+        }
+        if(op=='/'){
+            resp= divi(n1, n2);
+        }
+    
+        if(resp.complexo>=0){
+            cout << resp.inteiro << " +" << resp.complexo << "i\n";
+        }
+        else{
+            cout << resp.inteiro << " " << resp.complexo << "i\n";
+        }
     }
-    if(op=='-'){
-        resp= sub(n1, n2);
-    }
-    if(op=='*'){
-        resp= mult(n1, n2);
-    }
-    if(op=='/'){
-        resp= divi(n1, n2);
-    }
-
-    if(resp.complexo>=0){
-        cout << resp.inteiro << " +" << resp.complexo << "i\n";
-    }
-    else{
-        cout << resp.inteiro << " " << resp.complexo << "i\n";
-    }
-
     return 0;
 }
 
